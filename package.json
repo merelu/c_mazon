@@ -1,0 +1,18 @@
+{
+  "name": "c_mazon",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/merelu/c_mazon.git",
+  "author": "GYUHA_HWANG <gyuha0310@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
