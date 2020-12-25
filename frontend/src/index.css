@@ -97,6 +97,14 @@ a.brand {
   font-size: 3rem;
   font-weight: bold;
 }
+.badge {
+  background-color: #f02020;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 0.2rem 0.7rem;
+  font-size: 1.4rem;
+  margin-left: 0.2rem;
+}
 .row {
   display: flex;
   flex-wrap: wrap; /*flex-item 요소들이 내부 로직에 의해 부모요소내에 분할되어 여러 행에 걸쳐서 배치 배치 시작점은 flex-direction에 의해 결정(wrap) 부모요소 영역을 벗어나더라도 한 줄에 배치(nowrap) */
