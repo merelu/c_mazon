@@ -1,13 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { signin } from "../actions/userActions";
 
-export default function SigninScreen() {
+export default function SigninScreen(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  //props.location.search로 현재 url의 쿼리스트링을 가져올 수 있다.
+  const redirect = props.location.search
+    ? props.location.search.split("=")[1]
+    : "/";
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
+  const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
-    //TODO: sigin action
+    dispatch(signin(email, password));
   };
+  useEffect(() => {
+    if (userInfo) {
+      props.history.push(redirect);
+    }
+  }, [props.history, userInfo, redirect]);
   return (
     <div>
       <form className="form" onSubmit={submitHandler}>
