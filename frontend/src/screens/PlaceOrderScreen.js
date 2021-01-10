@@ -50,43 +50,42 @@ export default function PlaceOrderScreen(props) {
                   {cart.shippingAddress.country}
                 </p>
               </div>
-              <li>
-                <div className="card card-body">
-                  <h2>Payment</h2>
-                  <p>
-                    <strong>Method:</strong> {cart.paymentMethod}
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div className="card card-body">
-                  <h2>Order Items</h2>
-                  <ul>
-                    {cart.cartItems.map((item) => (
-                      <li key={item.product}>
-                        <div className="row">
-                          <div>
-                            <img
-                              src={item.image}
-                              alt={item.name}
-                              className="small"
-                            ></img>
-                          </div>
-                          <div className="min-30">
-                            <Link to={`/product/${item.product}`}>
-                              {item.name}
-                            </Link>
-                          </div>
-                          <div className="price">
-                            {item.qty} x ${item.price} = $
-                            {item.qty * item.price}
-                          </div>
+            </li>
+            <li>
+              <div className="card card-body">
+                <h2>Payment</h2>
+                <p>
+                  <strong>Method:</strong> {cart.paymentMethod}
+                </p>
+              </div>
+            </li>
+            <li>
+              <div className="card card-body">
+                <h2>Order Items</h2>
+                <ul>
+                  {cart.cartItems.map((item) => (
+                    <li key={item.product}>
+                      <div className="row">
+                        <div>
+                          <img
+                            src={item.image}
+                            alt={item.name}
+                            className="small"
+                          ></img>
                         </div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </li>
+                        <div className="min-30">
+                          <Link to={`/product/${item.product}`}>
+                            {item.name}
+                          </Link>
+                        </div>
+                        <div className="price">
+                          {item.qty} x ${item.price} = ${item.qty * item.price}
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </li>
           </ul>
         </div>
