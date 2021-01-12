@@ -47,7 +47,7 @@ export default function RegisterScreen(props) {
           <input
             type="name"
             id="name"
-            placeholder="Enter Name"
+            placeholder="Enter name"
             required
             onChange={(e) => setName(e.target.value)}
           ></input>
